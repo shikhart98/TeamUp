@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.shikh.teamup.fillDetails"
+    tools:showIn="@layout/activity_fill_details">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:text="Team Name"
+        android:id="@+id/fd_tv_teamname"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="18"
+        android:id="@+id/fd_et_teamname"
+        android:hint="Enter your team name here"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/fd_tv_addMem"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:text="Add Members"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:id="@+id/fd_et_addMem"
+            android:hint="Add team members here"
+            android:layout_marginLeft="15dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#f8f8f8"
+            android:text = "@string/addame"
+            android:id="@+id/fill_detail_addme"
+            style="?android:attr/borderlessButtonStyle"
+            android:textSize="25sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team Members"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:textSize="25sp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        tools:listitem="@layout/list_users"
+        android:id="@+id/fd_rv"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

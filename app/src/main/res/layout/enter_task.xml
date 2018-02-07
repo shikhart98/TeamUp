@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#263238"
+    android:padding="5dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "TASK"
+        android:textColor="#FFD180"
+        android:textSize="40dp"
+        android:layout_gravity="center"
+        />
+    <EditText
+        android:id="@+id/et_enteredtask"
+        android:inputType="textEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:textColor="#FFFFFF"
+        android:ems="14"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="Enter task here" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:id="@+id/btn_addtask"
+        android:textColor="#FFD180"
+        android:text="Add"/>
+</LinearLayout>
