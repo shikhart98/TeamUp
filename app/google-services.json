@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "742654673296",
+    "firebase_url": "https://teamup-387c6.firebaseio.com",
+    "project_id": "teamup-387c6",
+    "storage_bucket": "teamup-387c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742654673296:android:f059998f104b662b",
+        "android_client_info": {
+          "package_name": "com.example.shikh.teamup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742654673296-aki0baqij1b1bn1gthsl6h3q76olnidb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shikh.teamup",
+            "certificate_hash": "63c72670a358f69f9ed9f4ad72b2b0887208d931"
+          }
+        },
+        {
+          "client_id": "742654673296-4gpqmjvnb901nrtn181n391mofa3nfba.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJfyTWPCQHEMczlcm-son9rZoFx2iPitg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742654673296-4gpqmjvnb901nrtn181n391mofa3nfba.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

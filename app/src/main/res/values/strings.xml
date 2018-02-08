@@ -33,4 +33,6 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="priority_level">Priority Level</string>
+    <string name="_1">1</string>
 </resources>
