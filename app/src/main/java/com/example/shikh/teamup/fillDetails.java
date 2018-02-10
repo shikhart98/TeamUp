@@ -79,6 +79,23 @@ public class fillDetails extends AppCompatActivity {
             }
         });
 
+        fd_imgbtn_to.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(fillDetails.this);
+                View mView = getLayoutInflater().inflate(R.layout.calendar,null);
+                final CalendarView calendar = mView.findViewById(R.id.calendar);
+                final Button add_date = findViewById(R.id.add_date);
+                calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+                    @Override
+                    public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                        String date = dayOfMonth +"/" +month +"/" +year;
+                        fd_et_to.setText(date);
+                    }
+                });
+            }
+        });
+
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
