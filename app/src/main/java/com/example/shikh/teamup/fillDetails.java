@@ -76,6 +76,9 @@ public class fillDetails extends AppCompatActivity {
                         fd_et_from.setText(date);
                     }
                 });
+                mBuilder.setView(mView);
+                final AlertDialog dialog = mBuilder.create();
+                dialog.show();
             }
         });
 
@@ -93,6 +96,9 @@ public class fillDetails extends AppCompatActivity {
                         fd_et_to.setText(date);
                     }
                 });
+                mBuilder.setView(mView);
+                final AlertDialog dialog = mBuilder.create();
+                dialog.show();
             }
         });
 
