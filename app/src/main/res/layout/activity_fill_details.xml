@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.shikh.teamup.fillDetails">
+    android:orientation="vertical">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:text="Team Details"
+            android:textColor="#FFFFFF"
+            android:textSize="60px" />
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:background="@color/colorPrimaryDark"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="60px"
-                    android:layout_margin="12dp"
-                    android:textColor="#FFFFFF"
-                    android:text="Team Details"/>
-            </LinearLayout>
+        tools:context="com.example.shikh.teamup.fillDetails">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <TextView
                 android:id="@+id/fd_tv_teamname"
@@ -48,231 +54,233 @@
                 android:ems="18"
                 android:hint="Team name" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/fd_tv_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="From"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
+
+
+                <TextView
+                    android:id="@+id/fd_tv_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="170dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="To"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/fd_et_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:ems="5" />
+
+                <ImageButton
+                    android:id="@+id/fd_imgbtn_from"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    app:srcCompat="@drawable/ic_date_range_black_24dp" />
+
+                <EditText
+                    android:id="@+id/fd_et_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="65dp"
+                    android:ems="5" />
+
+                <ImageButton
+                    android:id="@+id/fd_imgbtn_to"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    app:srcCompat="@drawable/ic_date_range_black_24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fd_prioritylevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/priority_level"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp">
+
+                    <Button
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#c5faa1"
+                        android:text="@string/_1"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#a5ff68"
+                        android:text="2"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#95ff4e"
+                        android:text="3"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#83ff30"
+                        android:text="4"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#61f200"
+                        android:text="5"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#59dc00"
+                        android:text="6"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#4fc400"
+                        android:text="7"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#409e01"
+                        android:text="8"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#348100"
+                        android:text="9"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#245900"
+                        android:text="10"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
 
             <TextView
-                android:id="@+id/fd_tv_from"
+                android:id="@+id/fd_tv_addMem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="10dp"
-                android:text="From"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
-
-
-            <TextView
-                android:id="@+id/fd_tv_to"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="170dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:text="To"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/fd_et_from"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:ems="5" />
-
-            <ImageButton
-                android:id="@+id/fd_imgbtn_from"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@null"
-                app:srcCompat="@drawable/ic_date_range_black_24dp" />
-
-            <EditText
-                android:id="@+id/fd_et_to"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="65dp"
-                android:ems="5" />
-
-            <ImageButton
-                android:id="@+id/fd_imgbtn_to"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@null"
-                app:srcCompat="@drawable/ic_date_range_black_24dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/fd_prioritylevel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:text="@string/priority_level"
+                android:text="Add Members"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp">
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/fd_et_addMem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:ems="15"
+                    android:hint="Add team members here" />
 
                 <Button
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="#c5faa1"
-                    android:text="@string/_1"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="#a5ff68"
-                    android:text="2"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="#95ff4e"
-                    android:text="3"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="#83ff30"
-                    android:text="4"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="#61f200"
-                    android:text="5"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="#59dc00"
-                    android:text="6"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="#4fc400"
-                    android:text="7"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="#409e01"
-                    android:text="8"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="#348100"
-                    android:text="9"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="#245900"
-                    android:text="10"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
+                    android:id="@+id/fill_detail_addme"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#f8f8f8"
+                    android:text="@string/addame"
+                    android:textSize="25sp" />
             </LinearLayout>
 
-        </LinearLayout>
-
-
-        <TextView
-            android:id="@+id/fd_tv_addMem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="10dp"
-            android:text="Add Members"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/fd_et_addMem"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:ems="15"
-                android:hint="Add team members here" />
+                android:layout_marginTop="25dp"
+                android:text="Team Members : "
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                android:textSize="25sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/fd_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                tools:listitem="@layout/list_users">
+
+            </android.support.v7.widget.RecyclerView>
 
             <Button
-                android:id="@+id/fill_detail_addme"
-                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/Submit_team"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#f8f8f8"
-                android:text="@string/addame"
-                android:textSize="25sp" />
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="submit"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="25dp"
-            android:text="Team Members : "
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-            android:textSize="25sp" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/fd_rv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            tools:listitem="@layout/list_users">
-
-        </android.support.v7.widget.RecyclerView>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="submit"
-            android:textColor="#FFFFFF"
-            android:background="@color/colorPrimaryDark"
-            android:layout_gravity="center"
-            android:id="@+id/Submit_team"
-            android:layout_margin="20dp"/>
-    </LinearLayout>
-
-</android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>
