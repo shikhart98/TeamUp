@@ -43,7 +43,7 @@ public class GActivity extends AppCompatActivity
     String teamname;
     SQLiteDatabase writeDb;
     SQLiteDatabase read;
-    int i=0;
+    int i = 0;
     DatabaseHelper myhelper;
 
     @Override
@@ -59,7 +59,7 @@ public class GActivity extends AppCompatActivity
         rv_taskList = findViewById(R.id.rv_taskList);
         teamname = getIntent().getStringExtra("teamname");
 
-        adapter = new TodoAdapter(Tasks,this);
+        adapter = new TodoAdapter(Tasks, this);
         myhelper = new DatabaseHelper(this);
         writeDb = myhelper.getWritableDatabase();
         read = myhelper.getReadableDatabase();
@@ -76,20 +76,20 @@ public class GActivity extends AppCompatActivity
                 btn_addtask.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(!et_enteredtask.getText().toString().isEmpty()){
-                            tasks Task = new tasks(i,et_enteredtask.getText().toString(),teamname,false);
+                        if (!et_enteredtask.getText().toString().isEmpty()) {
+                            tasks Task = new tasks(i, et_enteredtask.getText().toString(), teamname, false);
 
-                            TaskTable.insertTask(Task,writeDb);
+                            TaskTable.insertTask(Task, writeDb);
 
                             et_enteredtask.setText("");
-                            adapter.setTasks(TaskTable.getTasksbyteamname(read,teamname));
+                            adapter.setTasks(TaskTable.getTasksbyteamname(read, teamname));
                             rv_taskList.setLayoutManager(new LinearLayoutManager(getBaseContext()));
                             rv_taskList.setAdapter(adapter);
                             adapter.notifyDataSetChanged();
                             i++;
-                            Toast.makeText(getBaseContext(),"Task "+et_enteredtask.getText().toString()+" added successfully",Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(getBaseContext(),"Write something in the field",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getBaseContext(), "Task " + et_enteredtask.getText().toString() + " added successfully", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getBaseContext(), "Write something in the field", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -98,7 +98,7 @@ public class GActivity extends AppCompatActivity
                 dialog.show();
             }
         });
-        adapter.setTasks(TaskTable.getTasksbyteamname(read,teamname));
+        adapter.setTasks(TaskTable.getTasksbyteamname(read, teamname));
         rv_taskList.setLayoutManager(new LinearLayoutManager(this));
         rv_taskList.setAdapter(adapter);
         adapter.notifyDataSetChanged();
@@ -119,8 +119,8 @@ public class GActivity extends AppCompatActivity
     protected void onPostResume() {
         myhelper = new DatabaseHelper(this);
         read = myhelper.getReadableDatabase();
-        adapter = new TodoAdapter(TaskTable.getTasksbyteamname(read,teamname),this);
-        adapter.setTasks(TaskTable.getTasksbyteamname(read,teamname));
+        adapter = new TodoAdapter(TaskTable.getTasksbyteamname(read, teamname), this);
+        adapter.setTasks(TaskTable.getTasksbyteamname(read, teamname));
         adapter.notifyDataSetChanged();
         super.onPostResume();
 
@@ -174,21 +174,21 @@ public class GActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
-            String str="";
-            int j=1;
+            String str = "";
+            int j = 1;
             StringBuilder s = new StringBuilder("");
 
-            for(String k:TaskTable.getTasknamebyteamname(read,teamname)){
+            for (String k : TaskTable.getTasknamebyteamname(read, teamname)) {
 //                s = j+". "+k+"\n";
-                s.append(j+". "+k+"\n");
+                s.append(j + ". " + k + "\n");
                 j++;
             }
 
-            Log.d("check", "onNavigationItemSelected: "+str);
-            Intent i = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto","bhavyarkochawla@gmail.com;rupavwinchester@gmail.com",null));
-            i.putExtra(i.EXTRA_SUBJECT,"Your Task");
-            i.putExtra(i.EXTRA_TEXT,"Team :" + teamname +"\n" + "These Tasks are to be done :\n\n " + s.toString());
-            startActivity(Intent.createChooser(i,"Choose one!"));
+            Log.d("check", "onNavigationItemSelected: " + str);
+            Intent i = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "bhavyarkochawla@gmail.com;rupavwinchester@gmail.com", null));
+            i.putExtra(i.EXTRA_SUBJECT, "Your Task");
+            i.putExtra(i.EXTRA_TEXT, "Team :" + teamname + "\n" + "These Tasks are to be done :\n\n " + s.toString());
+            startActivity(Intent.createChooser(i, "Choose one!"));
 
         } else if (id == R.id.nav_send) {
 

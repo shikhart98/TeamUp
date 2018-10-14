@@ -34,7 +34,7 @@ public class fillDetails extends AppCompatActivity {
 
     public static final String TAG = "FillDetails";
 
-    EditText fd_et_teamname,fd_et_addMem,fd_et_from,fd_et_to;
+    EditText fd_et_teamname, fd_et_addMem, fd_et_from, fd_et_to;
     ImageButton fd_imgbtn_from, fd_imgbtn_to;
     TextView fd_tv_teamname, fd_tv_addMem;
     ArrayList<teammates> team;
@@ -66,13 +66,13 @@ public class fillDetails extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(fillDetails.this);
-                        View mView = getLayoutInflater().inflate(R.layout.calendar,null);
+                View mView = getLayoutInflater().inflate(R.layout.calendar, null);
                 final CalendarView calendar = mView.findViewById(R.id.calendar);
                 final Button add_date = findViewById(R.id.add_date);
                 calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
                     @Override
                     public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                        String date = dayOfMonth +"/" +month +"/" +year;
+                        String date = dayOfMonth + "/" + month + "/" + year;
                         fd_et_from.setText(date);
                     }
                 });
@@ -86,13 +86,13 @@ public class fillDetails extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(fillDetails.this);
-                View mView = getLayoutInflater().inflate(R.layout.calendar,null);
+                View mView = getLayoutInflater().inflate(R.layout.calendar, null);
                 final CalendarView calendar = mView.findViewById(R.id.calendar);
                 final Button add_date = findViewById(R.id.add_date);
                 calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
                     @Override
                     public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                        String date = dayOfMonth +"/" +month +"/" +year;
+                        String date = dayOfMonth + "/" + month + "/" + year;
                         fd_et_to.setText(date);
                     }
                 });
@@ -101,7 +101,6 @@ public class fillDetails extends AppCompatActivity {
                 dialog.show();
             }
         });
-
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -114,7 +113,7 @@ public class fillDetails extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(fillDetails.this,"Group Added",Toast.LENGTH_SHORT).show();
+                Toast.makeText(fillDetails.this, "Group Added", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -122,7 +121,7 @@ public class fillDetails extends AppCompatActivity {
         fill_detail_addme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                teammates t = new teammates(fd_et_teamname.getText().toString(),fd_et_addMem.getText().toString(), i, 0);
+                teammates t = new teammates(fd_et_teamname.getText().toString(), fd_et_addMem.getText().toString(), i, 0);
                 UserTable.insertUser(t, writeDB);
                 i++;
                 fd_et_addMem.setText("");

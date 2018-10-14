@@ -82,7 +82,7 @@ public class TaskTable {
         return Tasks;
     }
 
-    public static ArrayList<tasks> getTasksbyteamname(SQLiteDatabase db,String teamname1) {
+    public static ArrayList<tasks> getTasksbyteamname(SQLiteDatabase db, String teamname1) {
         Cursor c = db.query(
                 TABLE_NAME,
                 new String[]{Columns.ID, Columns.TASK_NAME, Columns.TEAM_NAME, Columns.DONE},
@@ -108,11 +108,11 @@ public class TaskTable {
             ));
             c.moveToNext();
         }
-        Log.d(TAG, "getTasksbyteamname: "+Tasks);
+        Log.d(TAG, "getTasksbyteamname: " + Tasks);
         return Tasks;
     }
 
-    public static ArrayList<String> getTasknamebyteamname(SQLiteDatabase db,String teamname1) {
+    public static ArrayList<String> getTasknamebyteamname(SQLiteDatabase db, String teamname1) {
         Cursor c = db.query(
                 TABLE_NAME,
                 new String[]{Columns.TASK_NAME},
@@ -130,7 +130,7 @@ public class TaskTable {
             Tasks.add(c.getString(tasknameIndex));
             c.moveToNext();
         }
-        Log.d(TAG, "getTasksbyteamname: "+Tasks);
+        Log.d(TAG, "getTasksbyteamname: " + Tasks);
         return Tasks;
     }
 }

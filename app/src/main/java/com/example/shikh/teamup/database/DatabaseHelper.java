@@ -11,12 +11,12 @@ import com.example.shikh.teamup.database.table.UserTable;
  * Created by shikh on 11-01-2018.
  */
 
-public class DatabaseHelper extends SQLiteOpenHelper{
+public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "TeamTest.db";
     public static final int DB_VER = 1;
 
     public DatabaseHelper(Context context) {
-        super(context,DB_NAME,null,DB_VER);
+        super(context, DB_NAME, null, DB_VER);
     }
 
     @Override

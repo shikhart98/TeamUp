@@ -41,7 +41,7 @@ public class HomeScreenAdapter extends RecyclerView.Adapter<HomeScreenAdapter.Ho
     @Override
     public HomeScreenViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater li = LayoutInflater.from(parent.getContext());
-        return new HomeScreenViewHolder((li.inflate(R.layout.homescreenitem,parent,false)),context);
+        return new HomeScreenViewHolder((li.inflate(R.layout.homescreenitem, parent, false)), context);
     }
 
     @Override
@@ -54,11 +54,12 @@ public class HomeScreenAdapter extends RecyclerView.Adapter<HomeScreenAdapter.Ho
         return tn.size();
     }
 
-    class HomeScreenViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class HomeScreenViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView item_tv_home;
         Button btn_delete_homescreen;
         RecyclerView rv_homescreen;
+
         public HomeScreenViewHolder(View itemView, final Context context) {
             super(itemView);
             item_tv_home = itemView.findViewById(R.id.item_tv_home);
@@ -70,18 +71,19 @@ public class HomeScreenAdapter extends RecyclerView.Adapter<HomeScreenAdapter.Ho
                     int position = getAdapterPosition();
                     String team = tn.get(position);
                     Intent i = new Intent(context, GActivity.class);
-                    i.putExtra("teamname",tn.get(getAdapterPosition()));
+                    i.putExtra("teamname", tn.get(getAdapterPosition()));
                     context.startActivity(i);
                 }
             });
         }
-        public void BindView(String str){
+
+        public void BindView(String str) {
             item_tv_home.setText(str);
         }
 
         @Override
         public void onClick(View v) {
-            switch(v.getId()) {
+            switch (v.getId()) {
                 case R.id.btn_delete_homescreen:
                     Log.d(TAG, "onClick: ");
                     DatabaseHelper myhelper = new DatabaseHelper(itemView.getContext());

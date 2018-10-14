@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * Created by shikh on 11-01-2018.
  */
 
-public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.detailsViewHolder>{
+public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.detailsViewHolder> {
 
     ArrayList<teammates> team;
 
@@ -31,7 +31,7 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.detailsV
     @Override
     public detailsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater li = LayoutInflater.from(parent.getContext());
-        return new detailsViewHolder(li.inflate(R.layout.list_users,parent,false));
+        return new detailsViewHolder(li.inflate(R.layout.list_users, parent, false));
     }
 
     @Override
@@ -46,11 +46,13 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.detailsV
 
     static class detailsViewHolder extends RecyclerView.ViewHolder {
         TextView list_user_tv_user;
+
         public detailsViewHolder(View itemView) {
             super(itemView);
             list_user_tv_user = itemView.findViewById(R.id.list_user_tv_user);
         }
-        public void BindView(teammates Teammates){
+
+        public void BindView(teammates Teammates) {
             list_user_tv_user.setText(Teammates.getName());
         }
     }
