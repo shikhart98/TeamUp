@@ -40,7 +40,7 @@ public class fillDetails extends AppCompatActivity {
     ArrayList<teammates> team;
     RecyclerView fd_rv;
     DetailsAdapter adapter;
-    Button fill_detail_addme;
+    Button fill_detail_addme,Submit_team;
     int i = 0;
 
     @Override
@@ -61,6 +61,8 @@ public class fillDetails extends AppCompatActivity {
         fd_imgbtn_to = findViewById(R.id.fd_imgbtn_to);
         fd_et_from = findViewById(R.id.fd_et_from);
         fd_et_to = findViewById(R.id.fd_et_to);
+        Submit_team = findViewById(R.id.Submit_team);
+        fd_rv.setNestedScrollingEnabled(false);
 
         fd_imgbtn_from.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,15 +104,12 @@ public class fillDetails extends AppCompatActivity {
             }
         });
 
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-
         adapter = new DetailsAdapter(team);
         DatabaseHelper mydbHelper = new DatabaseHelper(this);
         final SQLiteDatabase writeDB = mydbHelper.getWritableDatabase();
         final SQLiteDatabase readDB = mydbHelper.getReadableDatabase();
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        Submit_team.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(fillDetails.this, "Group Added", Toast.LENGTH_SHORT).show();
